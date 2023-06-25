@@ -14,7 +14,7 @@ class JournalPage extends Model
     protected $fillable = [
         'date',
         'user_id',
-        'sport_level',
+        'sport_level_id',
         'main_focus',
         'meal_1',
         'meal_2',
@@ -32,5 +32,14 @@ class JournalPage extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+    /**
+     * Get the user that owns the DailyJournal
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function sportLevel(): BelongsTo
+    {
+        return $this->belongsTo(SportLevel::class);
     }
 }

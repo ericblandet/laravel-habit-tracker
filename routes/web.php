@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/today/write', CreateJournalPage::class);
+Route::get('/today/write', CreateJournalPage::class)->name('todayWrite');
